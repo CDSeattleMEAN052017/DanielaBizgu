@@ -1,2 +1,0 @@
-# DanielaBizgu
-mixdanutza
