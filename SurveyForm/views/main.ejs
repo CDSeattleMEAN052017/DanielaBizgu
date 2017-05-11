@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Survey Form</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+  </head>
+  <body>
+    <h1>Hello Daniela</h1>
+    <div class="info_box">
+        <form action="/process" method="post">
+          Your Name:<input type="text" name="name" placeholder="Add name.."></input>
+          <br><br>
+          Dojo Location:<select name="location">
+                              <option value="Seattle">Seattle</option>
+                              <option value="Chicago">Chicago</option>
+                              <option value="Miami">Miami</option>
+                              <option value="Moldova">Moldova</option>
+                        </select>
+          <br><br>
+          Favorite language:<select name="language">
+                              <option value="CSharp">CSharp</option>
+                              <option value="MEAN">MEAN</option>
+                              <option value="Python">Python</option>
+                              <option value="Ruby">Ruby</option>
+                            </select>
+        <br><br>
+        Comment (optional):
+        <br>
+        <textarea name="comment" placeholder="Add comment here ..." rows="5"></textarea>
+        <br><br>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
