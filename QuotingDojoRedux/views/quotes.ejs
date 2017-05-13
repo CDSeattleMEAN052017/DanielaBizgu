@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Quoting Dojo!</title>
+  </head>
+  <body>
+    <h1>Here are the awesome quotes!</h1>
+    <% for(var i in context){%>
+      <h2>Name: <%=context[i].name%></h2>
+      <p><strong>Quote:</strong> <%= context[i].quote %> <strong>at:</strong> <%= context[i].created_at%> </p>
+      <form action="/addLike/<%= context[i].id%>" method="post">
+        <button type="submit">Like</button>
+      </form>
+      <%= context[i].likes%>
+      <hr>
+    <%}%>
+  </body>
+</html>
