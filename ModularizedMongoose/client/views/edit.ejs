@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Edit this Friend!</title>
+  </head>
+  <body>
+     <h1> Edit this friend! </h1>
+
+         <h4><strong> Name:</strong> <%= context.name%></h4>
+         <h4><strong> Description:</strong> <%= context.description%></h4>
+         <img border="0" alt="Should be an image" src="<%=context.url%>" width="100" height="100">
+         <hr>
+
+         <form action="/friends/<%= context.id %>" method="post">
+           New Name:<input type="text" name="name"></input>
+           <br><br>
+           New Description:
+           <br>
+           <textarea type="text" name="description"></textarea>
+           <br><br>
+           New Url: <input type="text" name="url"></input>
+           <br><br>
+           <button  type="submit">Edit friend</button>
+         </form>
+
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Mongoose Dashboard</title>
+  </head>
+  <body>
+    <h1>Here are all your friends!</h1>
+    <form action="/new" method="get">
+      <button type="submit">Add new friend</button>
+    </form>
+
+    <% for (var i in context) { %>
+    <h4><strong> Name:</strong> <%= context[i].name%></h4>
+    <h4><strong> Description:</strong> <%= context[i].description%></h4>
+    <img border="0" alt="Should be an image" src="<%=context[i].url%>" width="100" height="100">
+    <form action="/show/<%=context[i].id%>" method="get">
+    <button type="submit"> See this guy</button>
+    </form>
+    <form action="/delete/<%= context[i].id%>" method="post">
+      <button type="submit">Delete</button>
+    </form>
+    <hr>
+    <% } %>
+  </body>
+</html>
