@@ -1,0 +1,7 @@
+<div id="box">
+  <h1>Currency Formats</h1>
+  <p>USD (no format)- {{value}}</p>
+  <p>EUR (currency format)- {{value | currency:'USD':false}}</p>
+  <p>AUS (currency 1.2 format=2 dec values)- {{value | currency:'AUS':true}}</p>
+  <p>CNY ( 1.0=0 dec values if value over '0' present)- {{value | currency:'CNY':true:'1.1-2'}}</p>
+</div>
