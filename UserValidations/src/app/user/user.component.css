@@ -1,0 +1,10 @@
+#form_box{
+  outline: 2px solid gray;
+  padding: 20px
+}
+.red_error{
+  color: red;
+}
+table, th, td {
+    border: 1px solid black;
+}

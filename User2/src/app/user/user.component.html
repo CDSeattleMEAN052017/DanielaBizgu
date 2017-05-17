@@ -1,0 +1,12 @@
+<p> User Component (child)</p>
+
+<ul>
+  <li *ngFor="let user of myUsers; let i=index">
+    <strong>{{user.name}}</strong>  -  was created at:   {{user.date | date:"short"}}
+    <br>
+    <button (click)="update(i)">Add Last Name</button>
+    <br>
+    <br>
+
+  </li>
+</ul>

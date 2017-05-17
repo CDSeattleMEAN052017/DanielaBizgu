@@ -1,0 +1,90 @@
+<p>User Component</p>
+<div id="form_box">
+  <form (submit)="create_user(formData)" #formData="ngForm">
+    First name:
+    <br>
+    <div *ngIf="firstName.errors && (firstName.dirty || firstName.touched)"  class="red_error">
+      <div [hidden]="!firstName.errors.required">
+        First Name is required
+      </div>
+      <div [hidden]="!firstName.errors.minlength">
+        First name must be at least 3 characters long.
+      </div>
+    </div>
+    <input type="text" [(ngModel)]="new_user.firstName"  name="firstName" placeholder="First.."  required minlength="3" #firstName="ngModel" />
+    <br><br>
+
+    Last name:
+    <br>
+    <div *ngIf="lastName.errors && (lastName.dirty || lastName.touched)"  class="red_error">
+      <div [hidden]="!lastName.errors.required">
+        Last Name is required
+      </div>
+      <div [hidden]="!lastName.errors.minlength">
+        Last Name must be at least 3 characters long.
+      </div>
+    </div>
+    <input type="text" [(ngModel)]="new_user.lastName"  name="lastName" placeholder="Last.." required minlength="3" #lastName="ngModel"/>
+    <br><br>
+
+    Email:
+    <br>
+    <div *ngIf="email.errors && (email.dirty || email.touched)"  class="red_error">
+      <div [hidden]="!email.errors.required">
+        Email is required
+      </div>
+      <div [hidden]="!email.errors.minlength">
+        Email must be at least 3 characters long.
+      </div>
+    </div>
+    <input type="text" [(ngModel)]="new_user.email"  name="email" placeholder="Email.." required minlength="3" #email="ngModel"/>
+    <br><br>
+
+
+    Password:
+    <br>
+    <div *ngIf="password.errors && (password.dirty || password.touched)"  class="red_error">
+      <div [hidden]="!password.errors.required">
+        Password is required
+      </div>
+      <div [hidden]="!password.errors.minlength">
+        Password must be at least 3 characters long.
+      </div>
+    </div>
+    <input type="password" [(ngModel)]="new_user.password"  name="password" placeholder="Password.." required minlength="3" #password="ngModel"/>
+    <br><br>
+
+    Re-enter password:
+    <br>
+    <div *ngIf="confPassword.errors && (confPassword.dirty || confPassword.touched)"  class="red_error">
+      <div [hidden]="!confPassword.errors.required">
+        Confirmation Password is required
+      </div>
+      <div [hidden]="!confPassword.errors.minlength">
+        Confirmation Password must be at least 3 characters long.
+      </div>
+    </div>
+    <input type="password" [(ngModel)]="new_user.confPassword"  name="confPassword" placeholder="Password.." required minlength="3" #confPassword="ngModel"/>
+    <br><br>
+
+    <button type="submit" value="create">Register</button>
+  </form>
+
+
+  <table *ngIf="users.length !=0">
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>email</th>
+      <th>Password</th>
+
+    </tr>
+    <tr *ngFor="let user of users">
+      <td>{{user.firstName}}</td>
+      <td>{{user.lastName}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.password}}</td>
+    </tr>
+  </table>
+
+</div>
