@@ -1,0 +1,37 @@
+<h1>Create a new note!</h1>
+<form (submit)="create_note(formData)" #formData="ngForm">
+  <h2>
+    <div *ngIf="title.errors && (title.dirty || title.touched)" class="red_error">
+      <h3 [hidden]="!title.errors.required"> Note Required! </h3>
+      <h3 [hidden]="!title.errors.minlength"> Your note has to be at least 4 characters long! </h3>
+      <h3 [hidden]="!title.errors.maxlength"> Your note can't be longer than 15 characters! </h3>
+    </div>
+    Note: <input type="text" [(ngModel)]="new_note.title"   name="title" required minlength="4" maxlength="15" #title="ngModel"/>
+    <button type="submit"> Add note</button>
+  </h2>
+</form>
+
+<table *ngIf="notes.length !=0">
+  <tr>
+    <th>Id</th>
+    <th>Title</th>
+    <th>created_at</th>
+    <th>update_at</th>
+    <th>action</th>
+  </tr>
+
+  <tr *ngFor="let note of notes; let i=index">
+    <td>{{note.id}}</td>
+    <td>{{note.title}}</td>
+    <td>{{note.created_at | date: "short"}}</td>
+    <td>{{note.updated_at  | date: "short"}}</td>
+    <td>
+      <button (click)="delete_note(i)">Delete</button>
+      <button (click)="show_note(note)">Edit</button>
+    </td>
+  </tr>
+
+</table>
+
+<hr>
+<app-note-edit *ngIf="chosen_note" [this_note]="chosen_note" (save)="update_note($event)" (delete)="delete_note($event)"></app-note-edit>

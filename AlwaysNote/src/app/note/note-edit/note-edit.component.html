@@ -1,0 +1,17 @@
+<h3>Edit note</h3>
+<p><strong>Id:</strong> {{this_note.id}}</p>
+<p><strong>Note:</strong> {{this_note.title}}</p>
+<p><strong>Create_at:</strong> {{this_note.created_at| date: "short"}}</p>
+<p><strong>Updated_at:</strong> {{this_note.updated_at| date: "short"}}</p>
+
+
+<form (submit)="save_note(formdata)" #formData="ngForm">
+    <div *ngIf="title.errors && (title.dirty || title.touched)" class="red_error">
+      <p [hidden]="!title.errors.required"> Note Required! </p>
+      <p [hidden]="!title.errors.minlength"> Your note has to be at least 4 characters long! </p>
+      <p [hidden]="!title.errors.maxlength"> Your note can't be longer than 15 characters! </p>
+    </div>
+
+    Note: <input type="text" [(ngModel)]="edit_note.title"   name="title" required minlength="4" maxlength="15" #title="ngModel"/>
+    <button type="submit"> Add note</button>
+</form>
