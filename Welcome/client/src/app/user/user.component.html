@@ -1,0 +1,4 @@
+<h1>All Users!</h1>
+<hr>
+<app-user-add (refresh)="get_all_users()"></app-user-add>
+<app-user-all [all_users]="all_users" (refresh)="get_all_users()" (get_one_user)="get_one($event)" (one_user)="one_user"></app-user-all>

@@ -1,0 +1,12 @@
+<h1>EDIT</h1>
+
+<form (submit)="edit_this_user()">
+    First Name: <input type="text" [(ngModel)]="edit_user.firstName" name="firstName"/><br><br>
+    Last Name: <input type="text" [(ngModel)]="edit_user.lastName" name="lastName"/><br><br>
+    Birthday: <input type="date" [(ngModel)]="edit_user.birthday" name="birthday"/><br><br>
+    <button type="submit"> Edit user</button>
+</form>
+<br>
+<br>
+<button [routerLink]="['']">Dashboard</button>
+<hr>

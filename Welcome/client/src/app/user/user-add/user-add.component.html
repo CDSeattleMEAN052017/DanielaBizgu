@@ -1,0 +1,10 @@
+<p>Add a user</p>
+
+<form (submit)="add_user()">
+    First Name: <input type="text" [(ngModel)]="new_user.firstName" name="firstName"/><br><br>
+    Last Name: <input type="text" [(ngModel)]="new_user.lastName" name="lastName"/><br><br>
+    Birthday: <input type="date" [(ngModel)]="new_user.birthday" name="birthday"/><br><br>
+    <button type="submit"> Add user</button>
+</form>
+<br>
+<hr>

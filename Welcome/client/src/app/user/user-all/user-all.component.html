@@ -1,0 +1,21 @@
+<p>All Users</p>
+
+<table *ngIf="all_users">
+  <tr>
+    <th>Name</th>
+    <th>Birthday</th>
+    <th>Show</th>
+    <th>Update</th>
+    <th>Delete</th>
+  </tr>
+
+  <tr *ngFor="let user of all_users; let i=index">
+    <td>{{user.firstName}} {{user.lastName}}</td>
+    <td>{{user.birthday| date:"shortDate"}} </td>
+    <td><button [routerLink]="['show',user._id]" (click)="get_one(user)">Show</button> </td>
+    <td><button [routerLink]="['edit',user._id]">Edit</button> </td>
+    <td><button (click)="delete_users(user._id)">Delete</button> </td>
+  </tr>
+</table>
+<br>
+<hr>
